@@ -1,17 +1,10 @@
 {
-  "functions": {
-    "api/programm.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    },
-    "api/mediathek.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
+  "version": 2,
+  "buildCommand": null,
+  "devCommand": null,
+  "installCommand": null,
+  "outputDirectory": "docs",
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/:path*" },
     { "source": "/(.*)", "destination": "/docs/$1" }
   ]
 }
-
