@@ -1,0 +1,35 @@
+const fs = require('fs').promises;
+const path = require('path');
+
+module.exports = async (req, res) => {
+  try {
+    const dataPath = path.join(process.cwd(), 'data', 'mediathek.json');
+    const fileContents = await fs.readFile(dataPath, 'utf-8');
+    const mediathekData = JSON.parse(fileContents);
+    
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 20;
+    const start = (page - 1) * limit;
+    const end = start + limit;
+    const paginatedData = mediathekData.slice(start, end);
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate=120');
+    
+    res.status(200).json({
+      success: true,
+      page,
+      limit,
+      total: mediathekData.length,
+      data: paginatedData,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Mediathek API Fehler:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Mediathek-Daten nicht verfügbar'
+    });
+  }
+};
+

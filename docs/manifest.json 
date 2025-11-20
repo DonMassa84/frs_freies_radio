@@ -1,0 +1,25 @@
+{
+  "name": "Freies Radio Stuttgart",
+  "short_name": "FRS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#e74c3c",
+  "orientation": "portrait",
+  "description": "Live-Stream, Programm und Mediathek des Freien Radios für Stuttgart",
+  "icons": [
+    {
+      "src": "/logos/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logos/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
