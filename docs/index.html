@@ -137,11 +137,11 @@
     <script>
         'use strict';
         
-        // Configuration
+        // Configuration - HTTPS Streams für beste Kompatibilität
         const STREAM_URLS = [
-            'http://streaming.fueralle.org:8000/frs-hi.mp3',  // Primary
-            'http://streaming.fueralle.org:8000/frs-lo.mp3',  // Fallback
-            'http://streaming.fueralle.org:8000/frs-lo.ogg'   // Low bandwidth
+            'https://streaming.fueralle.org/frs-hi.mp3',    // Primary HQ
+            'https://streaming.fueralle.org/frs-lo.mp3',    // Fallback LQ
+            'https://streaming.fueralle.org/frs-lo.ogg'     // Alternative
         ];
 
         // Mock data for local testing & fallback
