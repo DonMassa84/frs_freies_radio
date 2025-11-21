@@ -1,9 +1,20 @@
+# Python
 __pycache__/
 *.pyc
 .Python
 venv/
+
+# Node / Web
 node_modules/
+
+# Deployment
 .vercel
+
+# Logs
 *.log
+
+# OS
 .DS_Store
+
+# Editor
 .vscode/
