@@ -1,9 +1,6 @@
 name: Scrape and Deploy
 
 on:
-  workflow_dispatch:
-
-on_disabled:
   push:
     branches: [ main ]
   workflow_dispatch:
