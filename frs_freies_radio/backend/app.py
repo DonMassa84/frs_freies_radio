@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime, timedelta
+import os
 from typing import Callable, Dict, List, Optional
 
 from flask import Flask, jsonify
@@ -55,10 +56,18 @@ def _group_week(items: List[dict], today: datetime.date) -> List[dict]:
     return output
 
 
+def _read_ttl() -> int:
+    value = os.getenv("CACHE_TTL_SECONDS", "300")
+    try:
+        return max(30, int(value))
+    except ValueError:
+        return 300
+
+
 def create_app(fetcher: Callable[[], List[dict]] = fetch_mediathek_items) -> Flask:
     app = Flask(__name__)
     CORS(app)
-    cache = SimpleCache(ttl_seconds=300)
+    cache = SimpleCache(ttl_seconds=_read_ttl())
 
     @app.errorhandler(Exception)
     def handle_exception(error: Exception):  # type: ignore[override]

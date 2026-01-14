@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
@@ -13,6 +14,8 @@ from urllib3.util.retry import Retry
 BASE_URL = "https://www.freies-radio.de"
 MEDIATHEK_URL = f"{BASE_URL}/mediathek"
 USER_AGENT = "frs-proxy/1.0 (+https://github.com/DonMassa84/frs_freies_radio)"
+REQUEST_TIMEOUT = float(os.getenv("REQUEST_TIMEOUT_SECONDS", "10"))
+HEAD_TIMEOUT = float(os.getenv("HEAD_TIMEOUT_SECONDS", "5"))
 
 
 def _create_session() -> requests.Session:
@@ -62,7 +65,7 @@ def _check_audio_available(session: requests.Session, url: str) -> bool:
     if not url:
         return False
     try:
-        resp = session.head(url, timeout=5)
+        resp = session.head(url, timeout=HEAD_TIMEOUT)
         return resp.status_code == 200
     except requests.RequestException:
         return False
@@ -123,7 +126,7 @@ def fetch_mediathek_items(
     session = _create_session()
 
     def _default_fetcher() -> str:
-        resp = session.get(MEDIATHEK_URL, timeout=10)
+        resp = session.get(MEDIATHEK_URL, timeout=REQUEST_TIMEOUT)
         resp.raise_for_status()
         return resp.text
 

@@ -15,6 +15,11 @@ pip install -r requirements.txt
 python app.py
 ```
 
+Optionale Konfiguration (`backend/.env.example`):
+- `CACHE_TTL_SECONDS`
+- `REQUEST_TIMEOUT_SECONDS`
+- `HEAD_TIMEOUT_SECONDS`
+
 Healthcheck:
 ```bash
 curl http://localhost:5000/health
