@@ -19,6 +19,7 @@ Optionale Konfiguration (`backend/.env.example`):
 - `CACHE_TTL_SECONDS`
 - `REQUEST_TIMEOUT_SECONDS`
 - `HEAD_TIMEOUT_SECONDS`
+- `LOCAL_TZ`
 
 Das Backend laedt `.env` automatisch, falls vorhanden.
 

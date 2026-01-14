@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime, timedelta
 import os
+from zoneinfo import ZoneInfo
 from typing import Callable, Dict, List, Optional
 
 from flask import Flask, jsonify
@@ -38,6 +39,24 @@ def _parse_date(date_str: str) -> Optional[datetime.date]:
         return datetime.strptime(date_str, "%Y-%m-%d").date()
     except (TypeError, ValueError):
         return None
+
+
+def _current_local_date() -> datetime.date:
+    tz_name = os.getenv("LOCAL_TZ", "Europe/Berlin")
+    try:
+        tz = ZoneInfo(tz_name)
+    except Exception:
+        tz = ZoneInfo("UTC")
+    return datetime.now(tz).date()
+
+
+def _fallback_latest(items: List[dict]) -> List[dict]:
+    dated = [(item, _parse_date(item.get("date"))) for item in items]
+    dated = [(item, d) for item, d in dated if d is not None]
+    if not dated:
+        return []
+    latest_date = max(d for _, d in dated)
+    return [item for item, d in dated if d == latest_date]
 
 
 def _group_week(items: List[dict], today: datetime.date) -> List[dict]:
@@ -87,8 +106,10 @@ def create_app(fetcher: Callable[[], List[dict]] = fetch_mediathek_items) -> Fla
 
         try:
             items = fetcher()
-            today = datetime.now().date()
+            today = _current_local_date()
             today_items = [item for item in items if _parse_date(item.get("date")) == today]
+            if not today_items:
+                today_items = _fallback_latest(items)
             cache.set("today", today_items)
             return jsonify(today_items)
         except Exception:
@@ -102,7 +123,7 @@ def create_app(fetcher: Callable[[], List[dict]] = fetch_mediathek_items) -> Fla
 
         try:
             items = fetcher()
-            today = datetime.now().date()
+            today = _current_local_date()
             week_items = _group_week(items, today)
             cache.set("week", week_items)
             return jsonify(week_items)
