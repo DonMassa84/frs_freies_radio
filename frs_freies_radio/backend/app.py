@@ -5,6 +5,7 @@ import os
 from typing import Callable, Dict, List, Optional
 
 from flask import Flask, jsonify
+from dotenv import load_dotenv
 from flask_cors import CORS
 
 from mediathek import fetch_mediathek_items
@@ -65,6 +66,7 @@ def _read_ttl() -> int:
 
 
 def create_app(fetcher: Callable[[], List[dict]] = fetch_mediathek_items) -> Flask:
+    load_dotenv()
     app = Flask(__name__)
     CORS(app)
     cache = SimpleCache(ttl_seconds=_read_ttl())

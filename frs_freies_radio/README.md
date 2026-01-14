@@ -20,6 +20,8 @@ Optionale Konfiguration (`backend/.env.example`):
 - `REQUEST_TIMEOUT_SECONDS`
 - `HEAD_TIMEOUT_SECONDS`
 
+Das Backend laedt `.env` automatisch, falls vorhanden.
+
 Healthcheck:
 ```bash
 curl http://localhost:5000/health
