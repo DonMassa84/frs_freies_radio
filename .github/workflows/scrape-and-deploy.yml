@@ -1,20 +1,33 @@
-# Python
-__pycache__/
-*.pyc
-.Python
-venv/
+name: Scrape and Deploy
 
-# Node / Web
-node_modules/
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
 
-# Deployment
-.vercel
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-# Logs
-*.log
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
-# OS
-.DS_Store
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-# Editor
-.vscode/
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
