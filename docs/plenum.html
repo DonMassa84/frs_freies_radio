@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FRS Plenum · Vinyl-DJ-Special</title>
+<meta name="description" content="Plenum-Pitch für ein einmaliges Vinyl-DJ-Special beim Freien Radio Stuttgart.">
+<style>
+:root{--bg:#0f1113;--panel:#171a1f;--panel2:#20252c;--text:#f6f7f9;--muted:#a7b0bd;--accent:#e4572e;--line:#2a313b}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{overflow:hidden;background:radial-gradient(1000px 600px at 15% -10%,rgba(228,87,46,.24),transparent 60%),radial-gradient(900px 600px at 100% 100%,rgba(82,168,255,.10),transparent 60%),var(--bg)}
+.deck{height:100dvh;width:100vw;position:relative;overflow:hidden}
+.slide{position:absolute;inset:0;padding:clamp(24px,5vw,70px);display:grid;grid-template-rows:auto 1fr auto;gap:24px;opacity:0;transform:translateX(36px) scale(.99);transition:.3s ease;pointer-events:none}
+.slide.active{opacity:1;transform:none;pointer-events:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:12px}.brand img{height:34px;max-width:140px}.brand span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800}
+h1,h2{margin:0;line-height:.96}h1{font-size:clamp(52px,9vw,128px);letter-spacing:-.05em}h2{font-size:clamp(40px,7vw,88px);letter-spacing:-.04em}
+.lead{font-size:clamp(20px,2.5vw,34px);line-height:1.25;color:#e8e9ec;max-width:1000px}.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;align-items:center}.span7{grid-column:span 7}.span5{grid-column:span 5}.span6{grid-column:span 6}.span12{grid-column:1/-1}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.big{font-size:clamp(34px,5vw,68px);font-weight:900}.accent{color:var(--accent)}
+.row{display:flex;gap:12px;flex-wrap:wrap}.pill{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:999px;padding:10px 14px;font-size:14px;color:#dfe3e8}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.cards3 .card h3{font-size:28px;margin:0 0 8px}.cards3 .card p{margin:0;color:var(--muted);line-height:1.5}
+.timeline{display:grid;gap:10px}.step{display:grid;grid-template-columns:100px 1fr 90px;gap:18px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.03)}.step b{font-size:18px}.step span:last-child{text-align:right;color:var(--muted)}
+.ask{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.ask div{padding:18px;border-radius:18px;background:var(--panel2);border:1px solid var(--line)}.ask strong{display:block;font-size:26px;color:var(--accent);margin-bottom:6px}
+.footer{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}.counter{font-variant-numeric:tabular-nums}
+.controls{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:20}.controls button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(23,26,31,.9);color:var(--text);cursor:pointer;font-size:20px}
+.notes{position:fixed;left:18px;bottom:18px;max-width:520px;background:#101215;border:1px solid var(--line);padding:14px 16px;border-radius:14px;color:#d7dce2;font-size:13px;line-height:1.45;display:none;z-index:30}.notes.show{display:block}
+@media(max-width:850px){.grid{display:block}.grid>*{margin-bottom:16px}.cards3{grid-template-columns:1fr}.ask{grid-template-columns:1fr 1fr}.slide{overflow:auto;padding-bottom:90px}.step{grid-template-columns:72px 1fr}.step span:last-child{display:none}}
+</style>
+</head>
+<body>
+<div class="deck">
+<section class="slide active" data-note="In einem Satz: Wir möchten ein einmaliges, kuratiertes Vinyl-DJ-Special als Pilot im FRS testen.">
+  <div class="top"><div class="brand"><img src="logos/frs-logo.svg" alt="FRS"><span>Plenum · 07.10.2026</span></div><div class="kicker">Pilotvorschlag</div></div>
+  <div class="grid"><div class="span7"><h1>Vinyl.<br><span class="accent">Vier Stunden.</span><br>Drei DJs.</h1><p class="lead">Ein einmaliges elektronisches DJ-Special für das Freie Radio Stuttgart – vorbereitet, technisch klar und als Pilot gedacht.</p></div><div class="span5 card"><div class="big">FRS<br>Frequenzwechsel</div><p class="muted">Elektronische Musik · Vinyl · 1990er bis heute · kuratiert statt Playlist-Automatik</p></div></div>
+  <div class="footer"><span>Daniel Massa · FRS Frequenzwechsel</span><span class="counter">1 / 8</span></div>
+</section>
+
+<section class="slide" data-note="Wichtig: keine Forderung nach einer festen Sendereihe. Erst einmal sauber pilotieren.">
+  <div class="top"><div class="kicker">01 · Format</div><div class="counter">2 / 8</div></div>
+  <div><h2>Ein Pilot, kein Daueranspruch.</h2><p class="lead">Das Format ist bewusst als <span class="accent">einmalige Sendung</span> gedacht. Wenn es redaktionell und technisch funktioniert, kann danach entschieden werden, ob daraus mehr entsteht.</p>
+  <div class="row"><span class="pill">einmalig</span><span class="pill">ca. 4 Stunden</span><span class="pill">Wochenende bevorzugt</span><span class="pill">elektronische Musik</span><span class="pill">Vinyl im Mittelpunkt</span></div></div>
+  <div class="footer"><span>Leitprinzip: klein starten, sauber auswerten</span><span>Pfeiltasten = Navigation</span></div>
+</section>
+
+<section class="slide" data-note="Die drei DJs bringen unterschiedliche Perspektiven und Generationen mit. Das ist ein Vorteil für die Sendung.">
+  <div class="top"><div class="kicker">02 · DJs</div><div class="counter">3 / 8</div></div>
+  <div class="cards3">
+    <div class="card"><h3>Cordelia</h3><p>ca. 50 · elektronische Musik · Vinyl-orientiert</p></div>
+    <div class="card"><h3>Marc</h3><p>ca. 40 · Club- und Techno-Kontext · Vinyl</p></div>
+    <div class="card"><h3>Gerhard</h3><p>ca. 46 · elektronische Musik · Vinyl</p></div>
+  </div>
+  <div class="footer"><span>Gemeinsamer Nenner: elektronische Musik + echte Platten</span><span class="muted">3 DJs</span></div>
+</section>
+
+<section class="slide" data-note="Die vier Stunden sind modular. Falls nur zwei Stunden möglich sind, können wir die Dramaturgie halbieren.">
+  <div class="top"><div class="kicker">03 · Dramaturgie</div><div class="counter">4 / 8</div></div>
+  <div><h2>Vier Stunden als Reise.</h2><div class="timeline">
+    <div class="step"><span>00:00</span><b>Ankommen · Deep House / House</b><span>~60 min</span></div>
+    <div class="step"><span>01:00</span><b>Verdichten · Electro / Techno</b><span>~60 min</span></div>
+    <div class="step"><span>02:00</span><b>Nachtfahrt · Techno / Trance</b><span>~60 min</span></div>
+    <div class="step"><span>03:00</span><b>Peak & Ausklang · freie Auswahl</b><span>~60 min</span></div>
+  </div></div>
+  <div class="footer"><span>Alternativ skalierbar auf 2 Stunden</span><span class="muted">klarer Ablauf statt offene Jam-Session</span></div>
+</section>
+
+<section class="slide" data-note="Technisch brauchen wir idealerweise zwei funktionierende Technics 1210, Tonabnehmer/Nadeln und einen passenden Mixer.">
+  <div class="top"><div class="kicker">04 · Technik</div><div class="counter">5 / 8</div></div>
+  <div class="grid"><div class="span6"><h2>Was wir brauchen.</h2><p class="lead">Die technische Frage ist überschaubar und vorab testbar.</p></div><div class="span6 card">
+    <p><b>2 × Technics 1210</b></p>
+    <p><b>DJ-Mixer</b> mit sauberem Phono-Eingang</p>
+    <p><b>Tonabnehmer / Nadeln</b> oder klare Mitbringliste</p>
+    <p><b>30–45 Minuten Soundcheck</b> vor Sendebeginn</p>
+    <p class="muted">Optional: Ersatzquelle / Digital-Backup für Ausfall</p>
+  </div></div>
+  <div class="footer"><span>Technik vor Sendetag verbindlich testen</span><span class="muted">kein Risiko im Livebetrieb</span></div>
+</section>
+
+<section class="slide" data-note="Conny hat zwei Wege genannt: Plenum für die Vorstellung oder direkte Ansprache einer passenden Redaktion. Wir brauchen heute nur die Richtung.">
+  <div class="top"><div class="kicker">05 · Redaktioneller Weg</div><div class="counter">6 / 8</div></div>
+  <div><h2>Wo kann das Format andocken?</h2><div class="cards3">
+    <div class="card"><h3>Bestehende Musikredaktion</h3><p>Einladung als Special innerhalb eines vorhandenen Formats.</p></div>
+    <div class="card"><h3>Surprise / offener Slot</h3><p>Falls kein bestehendes Format redaktionell passt.</p></div>
+    <div class="card"><h3>Pilot mit klarer Betreuung</h3><p>Einmalige Produktion mit technischer und redaktioneller Ansprechperson.</p></div>
+  </div></div>
+  <div class="footer"><span>Ziel heute: zuständige Redaktion / Person finden</span><span class="muted">keine Endlosabstimmung</span></div>
+</section>
+
+<section class="slide" data-note="Vorbereitung ist schon vorhanden: Repository, Setstruktur, Playlist-Manifest und ein Sendeleitfaden. Audio wird nicht öffentlich in Git abgelegt.">
+  <div class="top"><div class="kicker">06 · Vorbereitung</div><div class="counter">7 / 8</div></div>
+  <div class="grid"><div class="span7"><h2>Der Pilot ist vorbereitet.</h2><p class="lead">Im Repo liegen bereits Sendekonzept, Set-Struktur, Playlist-Manifest und ein reproduzierbarer Sendeleitfaden. Die Musikdateien bleiben lokal.</p></div><div class="span5 card">
+    <div class="big accent">28</div><p>Titel in der vorbereiteten Auswahl</p>
+    <div class="big accent">4</div><p>vorbereitete Sets</p>
+    <div class="big accent">145,8</div><p>Minuten Material</p>
+  </div></div>
+  <div class="footer"><span>Repo: DonMassa84/frs-frequenzwechsel</span><span class="muted">Rechte/Musikmeldung vor Ausstrahlung klären</span></div>
+</section>
+
+<section class="slide" data-note="Am Ende bitte diese fünf Punkte konkret festhalten. Wenn nur drei davon heute beantwortbar sind, Verantwortliche und Folgetermin für den Rest festlegen.">
+  <div class="top"><div class="kicker">07 · Entscheidung</div><div class="counter">8 / 8</div></div>
+  <div><h2>Was wir heute brauchen.</h2><div class="ask">
+    <div><strong>1</strong>Welche Redaktion / wer ist Owner?</div>
+    <div><strong>2</strong>Welcher Sendeplatz ist realistisch?</div>
+    <div><strong>3</strong>4 Stunden oder besser 2?</div>
+    <div><strong>4</strong>Technics + Mixer verfügbar?</div>
+    <div><strong>5</strong>Wer klärt den nächsten Termin?</div>
+  </div><p class="lead" style="margin-top:28px">Wenn diese fünf Punkte geklärt sind, kann der Pilot konkret terminiert werden.</p></div>
+  <div class="footer"><span>FRS Frequenzwechsel · Pilotvorschlag</span><span class="accent">Danke.</span></div>
+</section>
+</div>
+
+<div class="controls"><button id="prev" aria-label="Vorherige Folie">←</button><button id="next" aria-label="Nächste Folie">→</button></div>
+<div class="notes" id="notes"></div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let i=0;
+const show=n=>{i=(n+slides.length)%slides.length;slides.forEach((s,k)=>s.classList.toggle('active',k===i));document.getElementById('notes').textContent=slides[i].dataset.note||''};
+document.getElementById('prev').onclick=()=>show(i-1);document.getElementById('next').onclick=()=>show(i+1);
+document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}if(e.key.toLowerCase()==='n'){document.getElementById('notes').classList.toggle('show')}});
+let x=null;document.addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{if(x===null)return;const d=e.changedTouches[0].clientX-x;if(Math.abs(d)>50)show(i+(d<0?1:-1));x=null},{passive:true});
+</script>
+</body>
+</html>
